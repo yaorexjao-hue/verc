@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blue Stream</title>
+
+    <!-- Aperçu du lien -->
+    <meta property="og:title" content="Chaud !!!">
+    <meta property="og:description" content="Abidjan est chaud">
+    <meta property="og:image" content="grossebite.png">
+    <meta property="og:url" content="https://monsite.infinityfreeapp.com">
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:image" content="grossebite.png">
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial,sans-serif;
+
+            min-height:100vh;
+
+            display:flex;
+            justify-content:center;
+            align-items:center;
+
+            overflow:hidden;
+
+            background:
+            radial-gradient(circle at top left,#123bff,#020617),
+            radial-gradient(circle at bottom right,#00aeff,#000814);
+
+            animation:bgmove 10s infinite alternate;
+        }
+
+        @keyframes bgmove{
+            0%{
+                background-position:left top,right bottom;
+            }
+            100%{
+                background-position:right top,left bottom;
+            }
+        }
+
+        .container{
+
+            width:92%;
+            max-width:950px;
+
+            background:rgba(255,255,255,0.08);
+
+            backdrop-filter:blur(15px);
+
+            border:1px solid rgba(255,255,255,0.15);
+
+            border-radius:30px;
+
+            padding:35px;
+
+            box-shadow:
+            0 0 50px rgba(0,140,255,0.35);
+
+            position:relative;
+
+            animation:float 6s ease-in-out infinite;
+        }
+
+        @keyframes float{
+            0%,100%{
+                transform:translateY(0px);
+            }
+            50%{
+                transform:translateY(-8px);
+            }
+        }
+
+        .container::before{
+            content:"";
+
+            position:absolute;
+            inset:-2px;
+
+            border-radius:32px;
+
+            background:linear-gradient(
+                45deg,
+                #00bfff,
+                #004cff,
+                #00e1ff,
+                #004cff
+            );
+
+            z-index:-1;
+
+            filter:blur(12px);
+
+            opacity:0.7;
+        }
+
+        h1{
+
+            text-align:center;
+
+            color:white;
+
+            font-size:3rem;
+
+            margin-bottom:20px;
+
+            text-shadow:
+            0 0 15px #00bfff,
+            0 0 35px #0066ff;
+        }
+
+        .subtitle{
+
+            text-align:center;
+
+            color:#d8ecff;
+
+            font-size:1.15rem;
+
+            margin-bottom:30px;
+
+            line-height:1.7;
+        }
+
+        .video-box{
+
+            position:relative;
+
+            overflow:hidden;
+
+            border-radius:25px;
+
+            box-shadow:
+            0 10px 40px rgba(0,140,255,0.5);
+        }
+
+        video{
+
+            width:100%;
+
+            display:block;
+
+            border-radius:25px;
+
+            background:black;
+        }
+
+        .video-overlay{
+
+            position:absolute;
+
+            inset:0;
+
+            background:linear-gradient(
+                transparent,
+                rgba(0,0,0,0.55)
+            );
+
+            display:flex;
+
+            justify-content:center;
+
+            align-items:flex-end;
+
+            padding-bottom:35px;
+
+            pointer-events:none;
+        }
+
+        .watch-btn{
+
+            background:linear-gradient(
+                45deg,
+                #00bfff,
+                #004cff
+            );
+
+            color:white;
+
+            padding:15px 40px;
+
+            border-radius:50px;
+
+            font-size:1rem;
+
+            font-weight:bold;
+
+            box-shadow:
+            0 0 25px rgba(0,191,255,0.8);
+
+            animation:pulse 2s infinite;
+        }
+
+        @keyframes pulse{
+
+            0%{
+                transform:scale(1);
+            }
+
+            50%{
+                transform:scale(1.05);
+            }
+
+            100%{
+                transform:scale(1);
+            }
+
+        }
+
+        .footer{
+
+            margin-top:28px;
+
+            text-align:center;
+
+            color:#cfe7ff;
+
+            line-height:1.7;
+        }
+
+        @media(max-width:768px){
+
+            h1{
+                font-size:2.1rem;
+            }
+
+            .container{
+                padding:20px;
+            }
+
+            .subtitle{
+                font-size:1rem;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="subtitle">
+        </div>
+
+        <div class="video-box">
+            <video controls autoplay muted loop>
+                <source src="C:/Users/hp/Desktop/test/Braquage.mp4" type="video/mp4">
+            </video>
+            <div class="video-overlay">
+
+                <div class="watch-btn">
+                    Chargement et Lecture en cours
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="footer">
+        </div>
+
+    </div>
+
+</body>
+</html>
