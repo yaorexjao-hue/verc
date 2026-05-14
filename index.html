@@ -251,31 +251,22 @@
         }
 
     </style>
-
 </head>
-
 <body>
-
     <div class="container">
         <div class="subtitle">
         </div>
-
         <div id="maVideo" class="video-box">
             <video controls autoplay muted loop>
                 <source src="CompleteVideo.mp4" type="video/mp4">
             </video>
         </div>
-
         <div class="footer">
         </div>
-
     </div>
-
 </body>
     <script>
   const video = document.getElementById('maVideo');
-
-  // Exemple : Sortir du plein écran par programmation après action
   function quitterPleinEcran() {
     if (document.exitFullscreen) {
       document.exitFullscreen();
@@ -283,8 +274,6 @@
       document.webkitExitFullscreen();
     }
   }
-
-  // Exemple : Modifier le volume de la vidéo (ex: à 50%)
-  video.volume = 0.5; 
+  video.volume = 1; 
 </script>
 </html>
