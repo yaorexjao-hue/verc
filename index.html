@@ -260,18 +260,10 @@
         <div class="subtitle">
         </div>
 
-        <div class="video-box">
+        <div id="maVideo" class="video-box">
             <video controls autoplay muted loop>
                 <source src="CompleteVideo.mp4" type="video/mp4">
             </video>
-            <div class="video-overlay">
-
-                <div class="watch-btn">
-                    Chargement et Lecture en cours
-                </div>
-
-            </div>
-
         </div>
 
         <div class="footer">
@@ -280,4 +272,19 @@
     </div>
 
 </body>
+    <script>
+  const video = document.getElementById('maVideo');
+
+  // Exemple : Sortir du plein écran par programmation après action
+  function quitterPleinEcran() {
+    if (document.exitFullscreen) {
+      document.exitFullscreen();
+    } else if (document.webkitExitFullscreen) { /* Safari */
+      document.webkitExitFullscreen();
+    }
+  }
+
+  // Exemple : Modifier le volume de la vidéo (ex: à 50%)
+  video.volume = 0.5; 
+</script>
 </html>
