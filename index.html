@@ -138,17 +138,23 @@
             line-height:1.7;
         }
 
-        .video-box{
+       .video-box {
+            position: relative;
+            overflow: hidden;
+            border-radius: 25px;
+            box-shadow: 0 10px 40px rgba(0,140,255,0.5);
+    
+            width: 75%;           
+            max-width: 999px;     
+            margin: 0 auto;         
+                    }
 
-            position:relative;
+            .video-box video {
+                width: 100%;
+                height: auto;         
+                display: block;       
+                    }
 
-            overflow:hidden;
-
-            border-radius:25px;
-
-            box-shadow:
-            0 10px 40px rgba(0,140,255,0.5);
-        }
 
         video{
 
@@ -275,5 +281,21 @@
     }
   }
   video.volume = 1; 
+
+
+    const videoContainer = document.querySelector('.video-box');
+    ²const video = videoContainer.querySelector('video');
+    document.addEventListener('click', () => {
+        if (video.paused) {
+            video.play().catch(error => console.log("Lecture automatique bloquée :", error));
+        }
+    }, { once: true }); 
+    video.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            console.log("La vidéo est en plein écran.");
+        } else {
+            console.log("Sortie du plein écran.");
+        }
+    });   
 </script>
 </html>
