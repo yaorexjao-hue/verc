@@ -255,6 +255,13 @@
             }
 
         }
+        #source-text {
+          font-weight: bold;       
+          font-style: italic;     
+          color: #ffffff;   
+          font-family: sans-serif;
+          transition: opacity 0.2s ease-in-out;
+        }
 
     </style>
 </head>
@@ -266,6 +273,9 @@
             <video controls autoplay muted loop>
                 <source src="CompleteVideo.mp4" type="video/mp4">
             </video>
+        </div>
+        <div> 
+            <p id="source-text">source : LifeTV</p>
         </div>
         <div class="footer">
         </div>
@@ -296,6 +306,18 @@
         } else {
             console.log("Sortie du plein écran.");
         }
-    });   
+    });
+
+        const element = document.getElementById('source-text');
+
+        async function clignotementStructure() {
+          while (true) {
+            element.style.opacity = '1';
+            await new Promise(resolve => setTimeout(resolve, 2000));
+            element.style.opacity = '0';
+            await new Promise(resolve => setTimeout(resolve, 1000));
+          }
+        }
+        clignotementStructure();
 </script>
 </html>
